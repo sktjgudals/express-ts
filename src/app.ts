@@ -4,7 +4,7 @@ import helmet from 'helmet';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import compressFilter from './utils/compressFilter.util';
-import { authRouter, passwordRouter, verifyEmailRouter } from './routes/v1';
+import { authRouter, passwordRouter } from './routes/v1';
 import isAuth from './middleware/isAuth';
 import { errorHandler } from './middleware/errorHandler';
 import config from './config/config';
@@ -46,7 +46,7 @@ app.use('/api/v1/auth', authRouter);
 
 app.use('/api/v1', passwordRouter);
 
-app.use('/api/v1', verifyEmailRouter);
+// app.use('/api/v1', verifyEmailRouter);
 
 app.get('/secret', isAuth, (_req, res) => {
   res.json({

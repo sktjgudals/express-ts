@@ -20,7 +20,7 @@ import {
   refreshTokenCookieConfig
 } from '../config/cookieConfig';
 
-import { sendVerifyEmail } from '../utils/sendEmail.util';
+// import { sendVerifyEmail } from '../utils/sendEmail.util';
 import logger from '../middleware/logger';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -83,7 +83,7 @@ export const handleSignUp = async (
     });
 
     // Send an email with the verification link
-    sendVerifyEmail(email, token);
+    // sendVerifyEmail(email, token);
 
     res.status(httpStatus.CREATED).json({ message: 'New user created' });
   } catch (err) {

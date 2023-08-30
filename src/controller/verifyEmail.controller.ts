@@ -3,7 +3,7 @@ import httpStatus from 'http-status';
 import { randomUUID } from 'crypto';
 import prismaClient from '../config/prisma';
 import type { EmailRequestBody, TypedRequest } from '../types/types';
-import { sendVerifyEmail } from '../utils/sendEmail.util';
+// import { sendVerifyEmail } from '../utils/sendEmail.util';
 
 /**
  * Sends Verification email
@@ -68,7 +68,7 @@ export const sendVerificationEmail = async (
   });
 
   // Send an email with the new verification link
-  sendVerifyEmail(email, token);
+  // sendVerifyEmail(email, token);
 
   // Return a success message
   return res.status(httpStatus.OK).json({ message: 'Verification email sent' });
